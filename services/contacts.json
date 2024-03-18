@@ -1,0 +1,26 @@
+[
+  {
+    "id": 20,
+    "first": "Ole",
+    "last": "Olsen",
+    "phone": "9244688",
+    "email": "ole.jakob.olsen@ngi.no",
+    "errors": {}
+  },
+  {
+    "id": 23,
+    "first": "Bowler",
+    "last": "Larsen",
+    "phone": "815 493 00",
+    "email": "bowler@kykelikokos.net",
+    "errors": {}
+  },
+  {
+    "id": 24,
+    "first": "Mamma",
+    "last": "M\u00f8",
+    "phone": "53481080",
+    "email": "mamma@mo.no",
+    "errors": {}
+  }
+]

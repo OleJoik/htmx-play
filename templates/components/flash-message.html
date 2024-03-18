@@ -1,0 +1,17 @@
+{% for message in get_flashed_messages(request) %}
+<div class="flash-message {{ message.category }}">{{ message.message }}</div>
+{% endfor %}
+
+<script>
+    window.addEventListener("DOMContentLoaded", (event) => {
+        setTimeout(() => {
+            const flashMessage = document.querySelector(".flash-message");
+            if (flashMessage) {
+                flashMessage.classList.add("fade-out");
+
+                // Optionally, remove the element from the DOM after fade-out completes
+                setTimeout(() => flashMessage.remove(), 1000);
+            }
+        }, 1000); // Adjust the time as needed
+    });
+</script>
