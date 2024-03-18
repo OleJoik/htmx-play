@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <script src="https://unpkg.com/htmx.org@1.9.11"></script>
+    <div>
+        <h1>Example 1</h1>
+        <button hx-get="button-click" class="btn btn-primary">Get</button>
+        <button hx-post="button-click" class="btn btn-success">Post</button>
+        <button hx-put="button-click" class="btn btn-warning">Put</button>
+        <button hx-patch="button-click" class="btn btn-warning">Patch</button>
+        <button hx-delete="button-click" class="btn btn-danger">Delete</button>
+    </div>
+{% endblock %}

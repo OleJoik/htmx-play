@@ -36,6 +36,13 @@ def edit(request: Request, contact: Contact):
     )
 
 
+def example_1_page(request: Request):
+    return _templates.TemplateResponse(
+        name="examples/01-button-click.html",
+        context={"request": request},
+    )
+
+
 def flash(request: Request, message: Any, category: str = "primary") -> None:
     if "_messages" not in request.session:
         request.session["_messages"] = []
