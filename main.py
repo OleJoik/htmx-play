@@ -103,7 +103,7 @@ def contacts_edit_post(
         return templates.edit(request, contact=c)
 
 
-@ui_router.post("/contacts/{contact_id}/delete")
+@ui_router.delete("/contacts/{contact_id}")
 def contacts_delete(request: Request, contact_id: int):
     contact = Contact.find(contact_id)
     if not contact:

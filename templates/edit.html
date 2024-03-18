@@ -44,7 +44,13 @@
         </fieldset>
     </form>
     <div style="height: 20px"></div>
-    <form action="/contacts/{{ contact.id }}/delete" method="post">
-        <button class="btn btn-danger">Delete Contact</button>
-    </form>
+    <button 
+        class="btn btn-danger" 
+        hx-delete="/contacts/{{ contact.id }}"
+        hx-target="body"
+        hx-push-url="true"
+        hx-confirm="Are you sure you want to delete this contact?"
+    >
+        Delete Contact
+    </button>
 {% endblock %}
