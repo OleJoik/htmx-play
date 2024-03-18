@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Request
+from fastapi.responses import HTMLResponse
 
 import templates
 
@@ -37,4 +38,17 @@ def patch_button_click():
 @router.delete("/button-click")
 def delete_button_click():
     print("DELETE button clicked")
-    return "DELETE"
+    return "PATCH"
+
+
+@router.get("/give-cake")
+def give_cake_button():
+    print("Cake coming right up!")
+    return HTMLResponse(
+        f"""
+        <figure>
+            <img src="/public/dog-cake.png" alt="Dog eating cake">
+            <figcaption>A dog eating cake, delivered by the server to your beautiful div</figcaption>
+        </figure>
+    """
+    )

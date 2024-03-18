@@ -9,4 +9,19 @@
         <button hx-patch="button-click" class="btn btn-warning">Patch</button>
         <button hx-delete="button-click" class="btn btn-danger">Delete</button>
     </div>
+    <hr>
+    <h1 style="margin-top: 40px">HX-target</h1>
+    <button hx-get="give-cake"
+            hx-target="#dog-cake-target"
+            class="btn btn-success">Give Cake</button>
+    <hr>
+    <div id="dog-cake-target"
+         style="padding: 20px;
+                min-height: 300px;
+                margin: 20px;
+                background-color: transparent;
+                border: 2px solid transparent;
+                border-image: linear-gradient(45deg, #6a82fb, #fc5c7d) 1">
+        This is a fancy box with id 'dog-cake-target'
+    </div>
 {% endblock %}
