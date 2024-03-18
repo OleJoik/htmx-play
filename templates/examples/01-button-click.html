@@ -24,4 +24,39 @@
                 border-image: linear-gradient(45deg, #6a82fb, #fc5c7d) 1">
         This is a fancy box with id 'dog-cake-target'
     </div>
+    <hr>
+    <h1 style="margin-top: 40px">HX-swap</h1>
+    <!-- hx-swap="innerHTML" -->
+    <!-- hx-swap="outerHTML" -->
+    <!-- hx-swap="beforebegin" -->
+    <!-- hx-swap="afterbegin" -->
+    <!-- hx-swap="beforeend" -->
+    <!-- hx-swap="afterend" -->
+    <!-- hx-swap="delete" -->
+    <!-- hx-swap="none" -->
+    <button hx-get="give-cake"
+            hx-target="#dog-swap-target"
+            hx-swap="beforeend"
+            class="btn btn-success">Insert Dog + Cake with swap</button>
+    <div id="dog-swap-target"
+         style="padding: 20px;
+                min-height: 300px;
+                margin: 20px;
+                background-color: transparent;
+                border: 2px solid transparent;
+                border-image: linear-gradient(45deg, #6a82fb, #fc5c7d) 1">
+        Another fancy box 'dog-swap-target' and some boxes inside
+        <div style="height: 100px;
+                    width: 100px;
+                    background-color: yellow;
+                    margin: 2px"></div>
+        <div style="height: 100px;
+                    width: 100px;
+                    background-color: green;
+                    margin: 2px"></div>
+        <div style="height: 100px;
+                    width: 100px;
+                    background-color: red;
+                    margin: 2px"></div>
+    </div>
 {% endblock %}
