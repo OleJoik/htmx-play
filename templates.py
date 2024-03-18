@@ -43,6 +43,13 @@ def example_1_page(request: Request):
     )
 
 
+def example_2_page(request: Request):
+    return _templates.TemplateResponse(
+        name="examples/02-react-counter-example.html",
+        context={"request": request},
+    )
+
+
 def flash(request: Request, message: Any, category: str = "primary") -> None:
     if "_messages" not in request.session:
         request.session["_messages"] = []

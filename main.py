@@ -9,6 +9,7 @@ from services.contact import Contact
 import templates
 
 from examples.example_01_button_click import router as button_click_router
+from examples.example_02_counter import router as counter_router
 
 Contact.load_db()
 
@@ -117,3 +118,4 @@ def contacts_delete(request: Request, contact_id: int):
 app.include_router(ui_router)
 
 app.include_router(button_click_router, prefix="/example-01")
+app.include_router(counter_router, prefix="/example-02")
