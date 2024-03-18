@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>HX-Trigger</h1>
+
+    <p>Triggering requests from other events than click</p>
+
+    <h3>Responsive 'bind'</h3>
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label>Example input</label>
+                <input 
+                     class="form-control"
+                     name="inputName" 
+                     hx-post="bind" 
+                     hx-trigger="keyup changed delay:200ms"
+                     hx-target="#bind-target"
+                     placeholder="input here"
+                 >
+            </div>
+        </div>
+        <div class="col-6">
+            <label>output</label>
+            <input 
+                id="bind-target"
+                class="form-control"
+                disabled 
+                value="-- no input --" 
+                type="text"
+            >
+        </div>
+    </div>
+
+    <hr>
+
+    <h3>Load trigger / polling</h3>
+
+    <div class="row">
+        <div class="col-10">
+            </ul>
+            <p>Getting current time at load, and every 5 seconds. Server takes 2.5 second to reply.</p>
+
+            <div 
+                hx-get="time" 
+                hx-target="#current-time" 
+                hx-swap="outerHTML" 
+                hx-trigger="load, every 5s" 
+                hx-indicator="#time-spinner"
+            >
+                <p id="current-time"></p>
+            </div>
+        </div>
+        <div class="col-2">
+            <img id="time-spinner" alt="Result loading..." class="htmx-indicator" width="70px" height="70px" src="/public/clock.svg"/>
+        </div>
+    </div>
+
+
+    <hr>
+
+    <h3>Live Search</h3>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label>Search here!</label>
+                <input 
+                     class="form-control"
+                     name="search" 
+                     hx-get="search" 
+                     hx-target="#search-results"
+                     hx-trigger="load, keyup changed delay:500ms"
+                     placeholder="Search..."
+                 >
+            </div>
+        </div>
+        <div class="col-6">
+            <h5>Search Results</h5>
+            <div id="search-results">
+                <!-- Search results will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/htmx.org@1.9.11"></script>
+{% endblock %}

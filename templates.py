@@ -45,7 +45,14 @@ def example_1_page(request: Request):
 
 def example_2_page(request: Request):
     return _templates.TemplateResponse(
-        name="examples/02-react-counter-example.html",
+        name="examples/02-react-counter.html",
+        context={"request": request},
+    )
+
+
+def example_3_page(request: Request):
+    return _templates.TemplateResponse(
+        name="examples/03-hx-trigger.html",
         context={"request": request},
     )
 
